@@ -50,7 +50,7 @@ pub const GrpcClient = struct {
         return parsed.status;
     }
 
-    pub fn call(self: *GrpcClient, method: []const u8, request: []const u8, compression_alg: compression.Compression.Algorithm) ![]u8 {
+    pub fn call(self: *GrpcClient, _: []const u8, request: []const u8, compression_alg: compression.Compression.Algorithm) ![]u8 {
         // Add auth token if available
         var headers = std.StringHashMap([]const u8).init(self.allocator);
         defer headers.deinit();

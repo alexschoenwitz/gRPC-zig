@@ -1,10 +1,18 @@
 .{
-    .name = "grpc-zig",
+    .name = .grpc_zig,
+    .fingerprint = 0xbcaa61f22977b2e1,
     .version = "0.1.0",
     .dependencies = .{
         .spice = .{
             .url = "https://github.com/judofyr/spice/archive/refs/heads/main.tar.gz",
-            .hash = "12345", // Replace with actual hash after first build
+            .hash = "spice-0.0.0-3FtxfM67AADgcc5i5rJfewMfbutQY7DMTyNlZblzW-6p", // Replace with actual hash after first build
         },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "LICENSE.txt",
+        "README.md",
     },
 }

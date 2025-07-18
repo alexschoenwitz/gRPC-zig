@@ -44,7 +44,7 @@ pub const Encoder = struct {
         try self.encodeString(buffer, value);
     }
 
-    fn encodeString(self: *Encoder, buffer: *std.ArrayList(u8), str: []const u8) !void {
+    fn encodeString(_: *Encoder, buffer: *std.ArrayList(u8), str: []const u8) !void {
         try buffer.append(@intCast(str.len));
         try buffer.appendSlice(str);
     }
@@ -84,7 +84,6 @@ pub const Decoder = struct {
     }
 
     fn decodeField(self: *Decoder, encoded: []const u8) !HeaderField {
-        _ = self;
         if (encoded[0] == 0x0) {
             // Literal header field
             const name_len = encoded[1];
